@@ -1,4 +1,4 @@
-# react-trace
+# React-Trace
 Test and verify what more performance practices when use pure React with ES6 (vanilla js).
 
 ## Pure function x Class functions
@@ -9,4 +9,7 @@ This is screenshot of class component flamegraph
 
 This is screenshot of pure component flamegraph
 ![Pure Component](screenshots/pureComponent.png)
+
+This is screenshot of pure component (CONST) flamegraph
+![Const Component](screenshots/constComponent.png)
 

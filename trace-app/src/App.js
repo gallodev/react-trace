@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-import PureComponent from './components/PureComponent'
-import ClassComponent from './components/ClassComponent';
-
+import {PureComponent,ClassComponent,ConstComponent} from './components/TestComponents';
 export default class App extends Component {
   
   constructor(props){
@@ -17,14 +15,19 @@ export default class App extends Component {
       case "pure_component":
         return <PureComponent/>      
       case "class_component":
-        return <ClassComponent/>      
+        return <ClassComponent/>     
+      case "const_component":
+        return <ConstComponent/> 
+      default:
+        throw new Error("No Component");
+        
     }
   }
 
 
   handleClick = (comp) => {
     let main_component = this.switch_component(comp);
-
+    
     this.setState({
       main_component
     });
@@ -39,6 +42,7 @@ export default class App extends Component {
         <div>
           <button onClick={(e) => this.handleClick("pure_component")}> Pure component </button>
           <button onClick={(e) => this.handleClick("class_component")}> Class component </button>          
+          <button onClick={(e) => this.handleClick("const_component")}> Const component </button>          
         </div>      
         <div>
             {main_component}
